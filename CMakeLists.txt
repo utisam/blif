@@ -6,6 +6,14 @@ set (CMAKE_CXX_FLAGS_DEBUG "-O0 -g -D_DEBUG")
 set (CMAKE_CXX_FLAGS_RELEASE "-O2 -flto -DNDEBUG")
 
 find_package (Boost REQUIRED COMPONENTS unit_test_framework)
+
+find_file (boloq_HEADER boloq.h)
+if (boloq_HEADER STREQUAL "boloq_HEADER-NOTFOUND")
+    message (FATAL_ERROR "Not found boloq.h, please install from https://github.com/utisam/boloq")
+else ()
+    message (STATUS "Found boloq.h")
+endif ()
+
 enable_testing ()
 macro (add_unittest NAME MAIN_SRC)
     add_executable (${NAME} ${MAIN_SRC} ${ARGN})
