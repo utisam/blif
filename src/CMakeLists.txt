@@ -14,5 +14,4 @@ add_unittest (unittest unittest.cpp ${NOMAIN_SOURCES})
 install (TARGETS ${CMAKE_PROJECT_NAME} LIBRARY DESTINATION lib64)
 install (DIRECTORY . DESTINATION "include"
          FILES_MATCHING PATTERN "*.h"
-         PATTERN "doc" EXCLUDE
-         PATTERN "sample" EXCLUDE)
+         PATTERN "doc" EXCLUDE)
