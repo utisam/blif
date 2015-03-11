@@ -5,6 +5,7 @@
 #include <boost/test/unit_test.hpp>
 #include <blif/parse.h>
 #include <blif/remodeler.h>
+#include <boloq.h>
 #include <boloq/io.h>
 using namespace std;
 
